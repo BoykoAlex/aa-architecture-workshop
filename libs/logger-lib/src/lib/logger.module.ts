@@ -3,17 +3,20 @@ import {LoggerConfig} from './logger.config';
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {DefaultLogFormatterService} from './default-log-formatter.service';
+import {LogMonitorComponent} from './log-monitor.component';
 
-const defaultFormatterConfig = [{
+const defaultFormatterConfig = {
   provide: LogFormatterService,
-  useClass: DefaultLogFormatterService
-}];
+  useValue: new DefaultLogFormatterService()
+};
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [
+    LogMonitorComponent
+  ]
 })
 export class LoggerModule {
   static forRoot(config: LoggerConfig): ModuleWithProviders<LoggerModule> {
@@ -28,7 +31,7 @@ export class LoggerModule {
         // out whats going on here ...
         (!config.logFormatterType) ?
           defaultFormatterConfig :
-          [{provide: LogFormatterService, useClass: config.logFormatterType}],
+          {provide: LogFormatterService, useClass: config.logFormatterType},
       ]
     }
   }

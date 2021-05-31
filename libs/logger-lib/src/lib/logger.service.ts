@@ -11,7 +11,9 @@ export class LoggerService {
   constructor(
     @Optional() private config: LoggerConfig,
     private logFormatter: LogFormatterService
-  ) {}
+  ) {
+    console.log('CONSTRUCTOR: LogService');
+  }
 
   debug(message: string): void {
     if (!this.config?.enableDebug) return;

@@ -32,7 +32,7 @@ import {PassengerApiModule} from '@flight-workspace/passenger-api';
     RouterModule.forRoot(APP_ROUTES, { relativeLinkResolution: 'legacy' }),
     LoggerModule.forRoot({
       enableDebug: true,
-      logFormatterType: /*CustomLogFormatterService*/DefaultLogFormatterService
+      logFormatterType: CustomLogFormatterService
     }),
     PassengerApiModule
   ],

@@ -11,5 +11,5 @@ import { Component, Input } from '@angular/core';
   styles: []
 })
 export class LogMonitorComponent {
-  @Input() stats: number;
+  @Input() stats = 10;
 }
