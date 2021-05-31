@@ -1,3 +1,24 @@
-<p>
-  passenger-search works!
-</p>
+<div class="card">
+  <div class="header">
+    <h1 class="title">Airports</h1>
+  </div>
+  <div class="content">
+    <div class="row" *ngFor="let passenger of passengers">
+      <div class="col-lg-1">
+        {{passenger.id}}
+      </div>
+      <div class="col-lg-4">
+        {{passenger.name}}
+      </div>
+      <div class="col-lg-4">
+        {{passenger.firstName}}
+      </div>
+      <div class="col-lg-1">
+        {{passenger.passengerStatus}}
+      </div>
+      <div class="col-lg-1">
+        {{passenger.bonusMiles}}
+      </div>
+    </div>
+  </div>
+</div>
